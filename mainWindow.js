@@ -13,6 +13,10 @@ exports.createWindow = () => {
         maxWidth: 650,
         minHeight: 310,
 
+        webPreferences: {
+            nodeIntegration: true
+        }
+
     })
 
     // devTools
