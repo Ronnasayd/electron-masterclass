@@ -14,7 +14,8 @@ exports.createWindow = () => {
         minHeight: 310,
 
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            webviewTag: true
         }
 
     })

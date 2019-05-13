@@ -35,10 +35,14 @@ exports.openItem = () => {
     let targetItem = $('.read-item.is-active')
 
     // Get items content url
-    let contentURL = targetItem.data('url')
+    let contentURL = encodeURIComponent(targetItem.data('url'))
 
-    console.log('opening')
-    console.log(contentURL)
+    // Reader window URL
+    let readerWinURL = `file://${__dirname}/render.html?url=${contentURL}`
+
+    // Open intem  in new proxy BrowserWindow
+    let readerWin = window.open(readerWinURL, targetItem.data('title'))
+
 }
 
 // Add new item
@@ -47,7 +51,7 @@ exports.addItem = (item) => {
     $('#no-items').hide()
 
     // New item html
-    let itemHTML = `<a class="panel-block read-item" data-url="${item.url}">
+    let itemHTML = `<a class="panel-block read-item" data-url="${item.url}" data-title="${item.title}">
                         <figure class="image has-shadow is-64x64 thumb">
                          <img src="${item.screenshot}">
                         </figure>
@@ -58,7 +62,7 @@ exports.addItem = (item) => {
     $('#read-list').append(itemHTML)
 
     $('.read-item')
-        .off('click', 'dblclick')
+        .off(['click', 'dblclick'])
         .on('click', this.selectItem)
         .on('dblclick', this.openItem)
 
