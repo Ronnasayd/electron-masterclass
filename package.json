@@ -1,26 +1,9 @@
 {
-  "name": "electron-quick-start",
+  "name": "Readit",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Master Electron Course Project",
   "main": "main.js",
-  "scripts": {
-    "start": "./node_modules/.bin/electron ."
-  },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "devtron": "^1.4.0",
-    "electron": "^5.0.1",
-    "electron-reload": "^1.4.0"
-  },
+  "author": "Stackacademy.tv",
   "dependencies": {
     "bulma": "^0.3.1",
     "font-awesome": "^4.7.0",
